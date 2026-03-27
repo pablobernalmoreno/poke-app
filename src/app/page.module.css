@@ -1,0 +1,21 @@
+.page {
+  min-height: 100vh;
+  background: #1a1a2e;
+  font-family: var(--font-geist-sans);
+  padding: 40px 20px;
+}
+
+.main {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+}
