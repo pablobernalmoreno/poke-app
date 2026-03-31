@@ -119,3 +119,37 @@
   font-size: 0.7rem !important;
   text-transform: capitalize !important;
 }
+
+/* Hover overlay — action buttons shown on card hover */
+.cardOverlay {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 1;
+}
+
+.card:hover .cardOverlay {
+  opacity: 1;
+}
+
+/* Individual overlay button */
+.overlayBtn {
+  background-color: rgba(22, 33, 62, 0.85) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  padding: 4px !important;
+}
+
+.overlayBtn:hover {
+  background-color: rgba(22, 33, 62, 1) !important;
+  color: #fff !important;
+}
+
+/* Active state (favorited / in team / is type ace) */
+.overlayBtnActive {
+  color: #90caf9 !important;
+}

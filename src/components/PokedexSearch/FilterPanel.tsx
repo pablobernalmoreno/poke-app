@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import { TYPE_COLORS } from "@/components/VirtualPokemonGrid/types";
+import { useTranslations } from "@/components/TranslationsProvider";
 import { type ActiveFilters } from "./PokedexSearch";
 import styles from "./FilterPanel.module.css";
 
@@ -39,6 +40,7 @@ export default function FilterPanel({
   onFiltersChange,
   onClose,
 }: Readonly<FilterPanelProps>) {
+  const t = useTranslations();
   const toggleType = (type: string) => {
     const isSelected = filters.types.includes(type);
     if (isSelected) {
@@ -65,8 +67,8 @@ export default function FilterPanel({
       slotProps={{ paper: { className: styles.drawerPaper } }}
     >
       <div className={styles.header}>
-        <Typography className={styles.headerTitle}>Filters</Typography>
-        <IconButton className={styles.closeButton} onClick={onClose} aria-label="Close filters">
+        <Typography className={styles.headerTitle}>{t.filters.title}</Typography>
+        <IconButton className={styles.closeButton} onClick={onClose} aria-label={t.filters.title}>
           <CloseIcon />
         </IconButton>
       </div>
@@ -75,7 +77,9 @@ export default function FilterPanel({
         {/* Type filter */}
         <div className={styles.section}>
           <Typography className={styles.sectionTitle}>
-            Type{filters.types.length > 0 ? ` (${filters.types.length}/2)` : " — select up to 2"}
+            {filters.types.length > 0
+              ? `${t.filters.typeLabel} (${filters.types.length}/2)`
+              : `${t.filters.typeLabel} — ${t.filters.typeHint}`}
           </Typography>
           <div className={styles.typesGrid}>
             {TYPE_NAMES.map((type) => {
@@ -98,7 +102,7 @@ export default function FilterPanel({
 
         {/* Generation filter */}
         <div className={styles.section}>
-          <Typography className={styles.sectionTitle}>Generation</Typography>
+          <Typography className={styles.sectionTitle}>{t.filters.generation}</Typography>
           <ToggleButtonGroup
             exclusive
             value={filters.generation}
@@ -121,7 +125,7 @@ export default function FilterPanel({
           onClick={clearAll}
           disabled={!hasFilters}
         >
-          Clear all filters
+          {t.filters.clearAll}
         </Button>
       </div>
     </Drawer>

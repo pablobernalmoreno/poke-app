@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
 
-// All routes are now under /[lang]. Redirect bare / to /en.
 export default function Home() {
   redirect("/en");
 }

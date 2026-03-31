@@ -17,8 +17,10 @@ const GAP_DEFAULT = 16;
 
 export default function VirtualPokemonGrid({
   pokemonList,
+  aceType = null,
 }: Readonly<{
   pokemonList: PokemonListItem[];
+  aceType?: string | null;
 }>) {
   "use no memo";
   const parentRef = useRef<HTMLDivElement>(null);
@@ -80,7 +82,7 @@ export default function VirtualPokemonGrid({
             style={{ top: virtualRow.start }}
           >
             {rows[virtualRow.index].map((p) => (
-              <PokemonCard key={p.name} item={p} />
+              <PokemonCard key={p.name} item={p} aceType={aceType} />
             ))}
           </div>
         ))}

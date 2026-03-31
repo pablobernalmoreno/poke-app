@@ -1,0 +1,37 @@
+{
+  "title": "Poké-app",
+  "search": {
+    "placeholder": "Buscar Pokémon..."
+  },
+  "filters": {
+    "title": "Filtros",
+    "typeLabel": "Tipo",
+    "typeHint": "selecciona hasta 2",
+    "generation": "Generación",
+    "clearAll": "Limpiar filtros"
+  },
+  "empty": "Ningún Pokémon coincide con tu búsqueda",
+  "collections": {
+    "tooltip": "Mis Colecciones",
+    "title": "Mis Colecciones",
+    "tabFavorites": "Favoritos",
+    "tabTeam": "Equipo",
+    "tabTypeAces": "Mejor de Tipo",
+    "exportBtn": "Exportar como imagen",
+    "emptyFavorites": "Aún no tienes favoritos. Dale un corazón a un Pokémon para agregarlo.",
+    "emptyTeam": "Aún no hay miembros del equipo. Añade hasta 6 Pokémon.",
+    "emptySlot": "vacío",
+    "exportFavorites": "Mis Favoritos",
+    "exportTeam": "Mi Equipo",
+    "exportTypeAces": "Mejor de Tipo"
+  },
+  "card": {
+    "favoriteAdd": "Agregar a favoritos",
+    "favoriteRemove": "Quitar de favoritos",
+    "teamAdd": "Agregar al equipo",
+    "teamRemove": "Quitar del equipo",
+    "teamFull": "Equipo completo (6/6)",
+    "typeAceSet": "Elegir como mejor de {type}",
+    "typeAceRemove": "Quitar como mejor de {type}"
+  }
+}

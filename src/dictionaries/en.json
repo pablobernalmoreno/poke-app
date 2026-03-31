@@ -1,0 +1,37 @@
+{
+  "title": "Poké-app",
+  "search": {
+    "placeholder": "Search Pokémon..."
+  },
+  "filters": {
+    "title": "Filters",
+    "typeLabel": "Type",
+    "typeHint": "select up to 2",
+    "generation": "Generation",
+    "clearAll": "Clear all filters"
+  },
+  "empty": "No Pokémon match your search",
+  "collections": {
+    "tooltip": "My Collections",
+    "title": "My Collections",
+    "tabFavorites": "Favorites",
+    "tabTeam": "Team",
+    "tabTypeAces": "Type Aces",
+    "exportBtn": "Export as image",
+    "emptyFavorites": "No favorites yet. Heart a Pokémon to add it here.",
+    "emptyTeam": "No team members yet. Add up to 6 Pokémon.",
+    "emptySlot": "empty",
+    "exportFavorites": "My Favorites",
+    "exportTeam": "My Team",
+    "exportTypeAces": "Type Aces"
+  },
+  "card": {
+    "favoriteAdd": "Add to favorites",
+    "favoriteRemove": "Remove from favorites",
+    "teamAdd": "Add to team",
+    "teamRemove": "Remove from team",
+    "teamFull": "Team is full (6/6)",
+    "typeAceSet": "Set as {type} ace",
+    "typeAceRemove": "Remove as {type} ace"
+  }
+}

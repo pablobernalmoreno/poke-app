@@ -1,0 +1,20 @@
+.page {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #1a1a2e;
+  font-family: var(--font-geist-sans);
+  padding: 40px 20px 20px;
+}
+
+.main {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
