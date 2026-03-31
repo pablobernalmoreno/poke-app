@@ -1,0 +1,121 @@
+/* Layout constants — read by JS via getComputedStyle to avoid duplication */
+:root {
+  --card-width: 160px;
+  --card-height: 236px;
+  --vgrid-gap: 16px;
+}
+
+/* Scroll container — JS attaches the virtualizer to this element */
+.scrollContainer {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a5c #1a1a2e;
+}
+
+/* Webkit (Chrome, Safari, Edge) scrollbar */
+.scrollContainer::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollContainer::-webkit-scrollbar-track {
+  background: #1a1a2e;
+  border-radius: 4px;
+}
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: #3a3a5c;
+  border-radius: 4px;
+  border: 2px solid #1a1a2e;
+}
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+  background: #5a5a8c;
+}
+
+/* Full-height spacer that gives the scrollbar its correct travel range */
+.spacer {
+  position: relative;
+}
+
+/* Absolute-positioned row — `top` is set inline by the virtualizer */
+.row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: var(--vgrid-gap);
+  justify-content: center;
+  padding-bottom: var(--vgrid-gap);
+}
+
+/* Fixed-size card shell — shared by both skeleton and loaded card */
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover effect applied only to the loaded card */
+.cardHover {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cardHover:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* CardContent overrides */
+.cardContent {
+  width: 100%;
+  padding-bottom: 12px !important;
+}
+
+/* Pokemon sprite */
+.cardMedia {
+  width: 120px;
+  height: 120px;
+  image-rendering: pixelated;
+}
+
+/* Skeleton sprite placeholder */
+.skeletonImg {
+  display: block;
+  margin: 8px auto 0;
+}
+
+/* Skeleton row spacing */
+.skeletonId {
+  margin-bottom: 4px;
+}
+.skeletonName {
+  margin-bottom: 8px;
+}
+
+/* Pokemon name */
+.pokemonName {
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+/* Type chip row */
+.typesRow {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* Type chip — bgcolor driven by --type-color set inline per chip */
+.typeChip {
+  background-color: var(--type-color, #888) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+  text-transform: capitalize !important;
+}

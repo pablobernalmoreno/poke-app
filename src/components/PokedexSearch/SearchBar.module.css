@@ -1,0 +1,32 @@
+.root {
+  flex: 1;
+}
+
+/* Override MUI TextField internals to match the dark navy theme */
+.root :global(.MuiOutlinedInput-root) {
+  color: #fff;
+  background-color: #16213e;
+  border-radius: 10px;
+}
+
+.root :global(.MuiOutlinedInput-notchedOutline) {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.root :global(.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline) {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.root
+  :global(.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline) {
+  border-color: #90caf9;
+}
+
+.root :global(input::placeholder) {
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
+
+.searchIcon {
+  color: rgba(255, 255, 255, 0.4);
+}
