@@ -25,6 +25,12 @@
     "exportTeam": "My Team",
     "exportTypeAces": "Type Aces"
   },
+  "navigation": {
+    "pokedex": "Pokedex",
+    "favorites": "Favorites",
+    "team": "Team",
+    "typeAces": "Type Aces"
+  },
   "card": {
     "favoriteAdd": "Add to favorites",
     "favoriteRemove": "Remove from favorites",

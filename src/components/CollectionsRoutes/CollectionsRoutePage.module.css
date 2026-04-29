@@ -1,0 +1,192 @@
+.page {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #1a1a2e;
+  font-family: var(--font-geist-sans);
+  padding: 40px 20px 20px;
+}
+
+.main {
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.navBtn {
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.navBtnActive {
+  border-color: rgba(144, 202, 249, 0.7) !important;
+  background: rgba(144, 202, 249, 0.14) !important;
+}
+
+.scrollArea {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a5c #1a1a2e;
+}
+
+.scrollArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+  background: #3a3a5c;
+  border-radius: 3px;
+}
+
+.scrollArea::-webkit-scrollbar-thumb:hover {
+  background: #5a5a8c;
+}
+
+.exportBtn {
+  margin-bottom: 12px !important;
+  width: 100%;
+}
+
+.contentCard {
+  background-color: #16213e;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.title {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  text-align: center;
+  color: #90caf9 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.emptyState {
+  text-align: center;
+  opacity: 0.5;
+  padding: 32px 0;
+  font-size: 0.9rem !important;
+}
+
+.miniGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 10px;
+}
+
+.miniCard {
+  background-color: #1a1a2e !important;
+  border-radius: 8px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px !important;
+  position: relative;
+}
+
+.miniCard:hover .removeBtn {
+  opacity: 1;
+}
+
+.miniSprite {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+}
+
+.miniName {
+  font-size: 0.72rem !important;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 1.2 !important;
+  margin-top: 4px !important;
+  word-break: break-word;
+}
+
+.removeBtn {
+  position: absolute !important;
+  top: 2px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  padding: 1px !important;
+  background-color: rgba(22, 33, 62, 0.9) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.removeBtn:hover {
+  color: #f48fb1 !important;
+}
+
+.aceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(98px, 1fr));
+  gap: 10px;
+}
+
+.aceSlot {
+  background-color: #1a1a2e !important;
+  border-radius: 8px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px !important;
+  position: relative;
+  min-height: 118px;
+  justify-content: center;
+}
+
+.aceSlot:hover .removeBtn {
+  opacity: 1;
+}
+
+.aceTypeChip {
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  text-transform: capitalize !important;
+  color: #fff !important;
+  background-color: var(--type-color, #888) !important;
+  border-radius: 4px !important;
+  padding: 2px 6px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.emptySlot {
+  opacity: 0.3;
+  font-size: 0.72rem !important;
+  text-align: center;
+  margin-top: 4px !important;
+}

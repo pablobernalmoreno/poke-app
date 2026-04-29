@@ -1,16 +1,18 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import Badge from "@mui/material/Badge";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
-import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import GroupsIcon from "@mui/icons-material/Groups";
+import StarIcon from "@mui/icons-material/Star";
 import VirtualPokemonGrid from "@/components/VirtualPokemonGrid/VirtualPokemonGrid";
 import { type PokemonEntry } from "@/components/VirtualPokemonGrid/types";
-import CollectionsPanel from "@/components/CollectionsPanel/CollectionsPanel";
 import { useCollectionsContext } from "@/components/CollectionsProvider";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useTranslations } from "@/components/TranslationsProvider";
@@ -36,11 +38,8 @@ export default function PokedexSearch({
     generation: null,
   });
   const [filterOpen, setFilterOpen] = useState(false);
-  const [collectionsOpen, setCollectionsOpen] = useState(false);
 
   const { favorites, team, typeAces } = useCollectionsContext();
-  const collectionsCount =
-    favorites.size + team.length + Object.keys(typeAces).length;
 
   const filtered = useMemo(
     () => filterPokemon(pokemonEntries, search, filters),
@@ -62,14 +61,39 @@ export default function PokedexSearch({
             <FilterListIcon />
           </IconButton>
         </Badge>
-        <Tooltip title={t.collections.tooltip}>
-          <Badge badgeContent={collectionsCount} color="secondary" max={99}>
+        <Tooltip title={t.navigation.favorites}>
+          <Badge badgeContent={favorites.size} color="secondary" max={99}>
             <IconButton
               className={styles.filterButton}
-              onClick={() => setCollectionsOpen(true)}
-              aria-label={t.collections.tooltip}
+              component={Link}
+              href={`/${lang}/favorite`}
+              aria-label={t.navigation.favorites}
             >
-              <CollectionsBookmarkIcon />
+              <FavoriteIcon />
+            </IconButton>
+          </Badge>
+        </Tooltip>
+        <Tooltip title={t.navigation.team}>
+          <Badge badgeContent={team.length} color="secondary" max={99}>
+            <IconButton
+              className={styles.filterButton}
+              component={Link}
+              href={`/${lang}/team`}
+              aria-label={t.navigation.team}
+            >
+              <GroupsIcon />
+            </IconButton>
+          </Badge>
+        </Tooltip>
+        <Tooltip title={t.navigation.typeAces}>
+          <Badge badgeContent={Object.keys(typeAces).length} color="secondary" max={99}>
+            <IconButton
+              className={styles.filterButton}
+              component={Link}
+              href={`/${lang}/type-aces`}
+              aria-label={t.navigation.typeAces}
+            >
+              <StarIcon />
             </IconButton>
           </Badge>
         </Tooltip>
@@ -81,11 +105,6 @@ export default function PokedexSearch({
         filters={filters}
         onFiltersChange={setFilters}
         onClose={() => setFilterOpen(false)}
-      />
-
-      <CollectionsPanel
-        open={collectionsOpen}
-        onClose={() => setCollectionsOpen(false)}
       />
 
       {filtered.length === 0 ? (

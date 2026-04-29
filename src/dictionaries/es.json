@@ -25,6 +25,12 @@
     "exportTeam": "Mi Equipo",
     "exportTypeAces": "Mejor de Tipo"
   },
+  "navigation": {
+    "pokedex": "Pokedex",
+    "favorites": "Favoritos",
+    "team": "Equipo",
+    "typeAces": "Mejor de Tipo"
+  },
   "card": {
     "favoriteAdd": "Agregar a favoritos",
     "favoriteRemove": "Quitar de favoritos",
